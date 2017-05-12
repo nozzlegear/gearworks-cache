@@ -47,7 +47,7 @@ cache.initialize().then(() => {
 
 ## Usage
 
-#### initialize(): Promise<void>
+#### initialize(): Promise\<void\>
 
 The cache must be initialized at application startup (or at least before you attempt to use any other function).
 
@@ -55,7 +55,7 @@ The cache must be initialized at application startup (or at least before you att
 await Cache.initialize();
 ```
 
-#### setValue<T>(segmentName: string, key: string, value: <T>, ttl: number = 3600000): Promise<void>
+#### setValue\<T\>(segmentName: string, key: string, value: \<T\>, ttl: number = 3600000): Promise\<void\>
 
 Async function that saves the given value to the cache.
 
@@ -75,7 +75,7 @@ const time = 60 * 60 * 1000 * 24;
 await Cache.setValue("foo-segment", key, value, time);
 ```
 
-#### getValue<T>(segmentName: string, key: string): Promise<CachedItem<T>>
+#### getValue\<T\>(segmentName: string, key: string): Promise\<CachedItem\<T\>\>
 
 Async function that gets a value from the cache. Will return undefined if the value is not found.
 
@@ -109,7 +109,7 @@ interface CachedItem<T> {
 }
 ```
 
-#### deleteValue(segmentName: string, key: string): Promise<void>
+#### deleteValue(segmentName: string, key: string): Promise\<void\>
 
 Async function that deletes a value from the cache.
 
