@@ -59,10 +59,12 @@ await Cache.initialize();
 
 Async function that saves the given value to the cache.
 
-`segmentName`: Name of the segment that the value will reside in, e.g. "auth-invalidation" or "recent-orders".
-`key`: Key/name of the value being set.
-`value`: Value to set in the cache. Must be json-serializable.
-`ttl`: (optional) Length of time that the value will reside in the cache, in milliseconds. Defaults to 60 minutes.
+| Variable | Description | Required |
+|----------|-------------|----------|
+|`segmentName`| Name of the segment that the value will reside in, e.g. "auth-invalidation" or "recent-orders". | true |
+|`key`| Key/name of the value being set. | true |
+|`value`| Value to set in the cache. Must be json-serializable. | true |
+|`ttl`| (optional) Length of time that the value will reside in the cache, in milliseconds. Defaults to 60 minutes. | false |
 
 ```typescript
 const key = "key_that_can_be_used_to_lookup_value";
@@ -79,8 +81,10 @@ await Cache.setValue("foo-segment", key, value, time);
 
 Async function that gets a value from the cache. Will return undefined if the value is not found.
 
-`segmentName`: Name of the segment that the value resides in, e.g. "auth-invalidation" or "recent-orders".
-`key`: Key/name of the value being retrieved.
+| Variable | Description | Required |
+|----------|-------------|----------|
+|`segmentName`| Name of the segment that the value resides in, e.g. "auth-invalidation" or "recent-orders".| true |
+|`key`| Key/name of the value being retrieved. | true |
 
 ```typescript
 const key = "key_that_can_be_used_to_lookup_value";
@@ -113,8 +117,11 @@ interface CachedItem<T> {
 
 Async function that deletes a value from the cache.
 
-`segmentName`: Name of the segment that the value resides in, e.g. "auth-invalidation" or "recent-orders".
-`key`: Key/name of the value being deleted.
+| Variable | Description | Required |
+|----------|-------------|----------|
+|`segmentName`| Name of the segment that the value resides in, e.g. "auth-invalidation" or "recent-orders".| true |
+|`key`| Key/name of the value being deleted. | true |
+
 
 ```typescript
 const key = "key_that_can_be_used_to_lookup_value";
